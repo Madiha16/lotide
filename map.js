@@ -33,14 +33,17 @@ assertArraysEqual(results1, ["g", "c", "t", "m", "t"]);
 assertArraysEqual(results2, [ 'r', 'o', 'o', 'a', 'o' ]);
 assertArraysEqual(results3, [ 2, 3, 4, 5, 6 ]);
 
-const eqArrays = function(array1, array2) {
-  for (let i = 0; i < array1.length; i++) {
-    if (array1[i] === array2[i]) {
-      return true;
-    } else {
+// // eqArrays function
+const eqArrays = function(arr1, arr2) {
+  if (arr1.length !== arr2.length) {
+    return false;
+  }
+  for (let i = 0; i < arr1.length; i++) {
+    if (arr1[i] !== arr2[i]) {
       return false;
     }
   }
+  return true;
 };
 
 console.log(eqArrays(results1, ["g", "c", "t", "m", "t"]));
